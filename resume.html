@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Resume</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet"> 
+	<style type="text/css">
+	html{font-family:'Josefin Sans', arial;  font-size: 16px; font-weight: regular;}
+
+	body{width:720px;
+		margin: 10px auto;
+		background: #EDEDED;}
+
+	body{
+		border: 2px solid;
+		border-radius: 10px;
+		padding: 0;
+	}
+	center{
+		margin:20px 0;
+	}
+	*{
+		box-sizing: border-box;
+		line-height: 1.5;
+
+		}
+
+
+		img{
+			max-width: 100%;
+			border-radius: 50%;
+			margin: 0;
+			margin-bottom: 5px;
+		}
+
+		h1,h2,h3,p,ul{
+			margin: 0;
+			margin-bottom: 10px;
+			line-height: 1.2;
+			letter-spacing: 0.5px;}
+		
+		h3{margin-top: 30px;}
+		section h3{
+			color: #de3f82;
+		}
+		aside h3{color: #A3EBB1;}
+
+			main{
+				display: grid;
+				grid-template-columns: 1fr 3fr;
+			}
+
+			
+			 aside *,section{
+			
+		 	padding:0 10px;
+		 	}
+
+			aside,section{margin: 10px;}
+			aside{
+				background: #386BA8;
+				color: white;
+				border-radius: 10px;
+			}
+		
+			li{list-style: none;
+				}
+		
+			p,p~p{font-size:90%;
+				margin:0;
+				
+				}
+			p~p span{color: grey;}
+
+			section li{
+				margin: 10px 0;}
+
+			.skills + ul li{
+				line-height: 2;
+				display: flex;
+				align-items: center;
+			}
+			.skills + ul li span{
+				flex: 1 1;
+				
+				
+			}
+			.progressBar { padding:  10px 0;
+			 width: 100%;
+			 column-gap: 0;
+			}
+			.star{
+				background: #18B89B;
+				margin: 2px;
+				border-radius:15px;
+				display: inline;
+				border: 3px solid}
+
+			.star.empty{background: transparent;
+				}
+			.list li {list-style-type:disc;
+				font-size: 90%;
+				}
+			
+	</style>
+</head>
+<body>
+<center>
+	<img src="profile.jpg" width='100px' height='100px'>
+	<h1>Chandu Kishore</h1>
+	<p>Web Developer I</p>
+</center>
+<main>
+		<aside>
+		<h3>Contact info</h3>
+		<ul >
+			<li>9908033297</li>
+			<li>kishorechandu223@gmail.com</li>
+			<li>github.com/ChanduKishore</li>
+		</ul>	
+
+		<h3>Hobbies</h3>
+		<ul>
+			<li>Reading novels</li>
+			<li>Listening to music</li>
+		</ul>	
+
+		<h3 class="skills">Techinical skills</h3>
+		<ul>
+			<li><span>Html5</span> <span class="level"></span></li>
+			<li><span>Css3</span> <span class="level"></span></li>
+			<li><span>JavaScript</span> <span class="level"></span></li>
+			<li><span>Php</span> <span class="level"></span></li>
+			<li><span>Python</span> <span class="level"></span></li>
+		</ul>
+		<h3>Languages</h3>
+		<ul>
+			<li>English, Hindi & Telugu</li>
+		</ul>
+		</aside>
+		
+		<section>
+			<h3>Summary</h3>
+
+			<p>Creative and Efficent web Developer with 6 months of experience
+			in front end developement. Eager to support <span class="changelog">dev team at <span class="company">Myphsys</span> </span> with top-notch coding skills. </p>
+
+		<h3> Education </h3>
+		
+				<p><strong>Bachelor's Degree in Mechanical Engineering </strong> <p>NBKR Institute of Science and Technology, Vidyanagar</p> <p><span>Jul 2016 - Sep 2020</span></p>
+				</p>
+			<br>
+				<p><strong>Intermediate</strong>
+				<p> NARAYANA Jr collage, Nellore</p>
+				<p><span>2014 - 2016</span></p>
+				</p>
+			<br>
+				<p><strong>High School</strong>
+				<p> Sai chaithanya EM high school, Nellore</p>
+				<p><span>2008 - 2014</span></p>
+				</p>
+
+		<h3>Projects</h3>
+
+		<p><strong>Web App</strong></p>
+		<ul class="list">
+			<li>Built a full-stack web app to display a video course library. Connected with mysql database to store user cradentials.</li>
+			<li>Using effective Css to add responsive nature to web app. Grid layout is used to seperate the playlist from main video  display.</li>
+			<li>video files added to page with the use of external Json file. All the functionalities are codded using pure vennela javascript.</li>
+			<li>Link to sample web app : <a href="https://amzflip.herokuapp.com" target='blank'>https://amzflip.herokuapp.com</a></li>
+		</ul>
+			
+		</section>
+</main>
+
+</body>
+<script type="text/javascript">
+	const progressContainer = document.querySelectorAll('.level');
+	const skill=[4,4,3,3,4];
+	progressContainer.forEach((Bar ,index) =>{
+		const progressBar = document.createElement('div');
+		progressBar.setAttribute('class','progressBar');
+		let stars= skill[index];
+			for(i=0;i<stars;i++){
+				const progress =document.createElement('div');
+				progress.setAttribute('class','star');
+
+				progressBar.appendChild(progress);
+			}
+			for(i=0;i< 5-stars;i++){
+				const progress =document.createElement('div');
+				progress.setAttribute('class','empty star');
+
+				progressBar.appendChild(progress);
+			}
+			
+		
+		Bar.appendChild(progressBar);
+	})
+	
+
+</script>
+</html>
